@@ -62,7 +62,8 @@ public class Hibernate03Query {
         Criteria criteria = session.createCriteria(Student.class);
         criteria.setProjection(Projections.property("firstName"));
 
-        //groupProperty ไม่เอาตัวซ้ำ
+
+        //groupProperty ไม่เอาตัวซ้ำ groupby
         //criteria.setProjection(Projections.property("lastName")); Set ซ้อนกัน เอา อันล่า สุด
         logger.info(criteria.list().get(1).toString());
     }
