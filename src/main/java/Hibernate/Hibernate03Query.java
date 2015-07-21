@@ -1,5 +1,6 @@
 package Hibernate;
 
+
 import Hibernate.POJO.anotation.Student;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -23,10 +24,12 @@ public class Hibernate03Query {
         Hibernate03Query hibernate03Query = new Hibernate03Query();
         //hibernate03Query.restriction(session);
         //hibernate03Query.restrictionOr(session);
+        //hibernate03Query.projections(session);
+        hibernate03Query.projectionList(session);
         //criteria.setFirstResult(0);
         //criteria.setMaxResults(10);
         //criteria.addOrder(Order.desc("firstname"));
-        hibernate03Query.Projections(session);
+
 
 
 
@@ -35,10 +38,22 @@ public class Hibernate03Query {
 
 
     }
-    private void Projections(Session session){
+    private void projectionList(Session session){
+        ProjectionList projectionList = Projections.projectionList();
+        projectionList.add(Projections.property("firstName"));
+        projectionList.add(Projections.property("lastName"));
+        Criteria criteria = session.createCriteria(Student.class);
+        criteria.setProjection(projectionList);
+/*
+        for(int i=0;i<criteria.list().size();i++){
+            logger.info("Firstname : {} lastName : {}",criteria.list().get(i).g,criteria.list().get(i).toString());
+        }*/
+
+    }
+    private void projections(Session session){
         Criteria criteria = session.createCriteria(Student.class);
         criteria.setProjection(Projections.property("firstName"));
-        ProjectionList projectionList = new ProjectionList();
+
         //groupProperty ไม่เอาตัวซ้ำ
         //criteria.setProjection(Projections.property("lastName")); Set ซ้อนกัน เอา อันล่า สุด
         logger.info(criteria.list().toString());
