@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.*;
+import org.hibernate.transform.Transformers;
+import org.json.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,13 +42,19 @@ public class Hibernate03Query {
     }
     private void projectionList(Session session){
         ProjectionList projectionList = Projections.projectionList();
-        projectionList.add(Projections.property("firstName"));
-        projectionList.add(Projections.property("lastName"));
+        projectionList.add(Projections.property("firstName").as("firstName"));
+        projectionList.add(Projections.property("lastName").as("lastName"));
         Criteria criteria = session.createCriteria(Student.class);
         criteria.setProjection(projectionList);
-/*
-        for(int i=0;i<criteria.list().size();i++){
-            logger.info("Firstname : {} lastName : {}",criteria.list().get(i).g,criteria.list().get(i).toString());
+        criteria.setResultTransformer(Transformers.aliasToBean(Student.class));
+        List<Student> studentList = criteria.list();
+        logger.info("{}",studentList);
+        for(Student student:studentList){
+           logger.info(student.getFirstName());
+        }
+
+        /*for(Object object:criteria.list()) {
+            logger.info("projectionList : {}", object);
         }*/
 
     }
@@ -56,7 +64,7 @@ public class Hibernate03Query {
 
         //groupProperty ไม่เอาตัวซ้ำ
         //criteria.setProjection(Projections.property("lastName")); Set ซ้อนกัน เอา อันล่า สุด
-        logger.info(criteria.list().toString());
+        logger.info(criteria.list().get(1).toString());
     }
     private void restrictionOr(Session session){
         Criteria criteria = session.createCriteria(Student.class);

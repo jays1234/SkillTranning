@@ -42,8 +42,10 @@
       <file leaf-file-name="Hibernate03Query.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Hibernate/Hibernate03Query.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31764707" vertical-offset="585" max-vertical-offset="1854">
-              <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+
+            <state vertical-scroll-proportion="-1.130137" vertical-offset="1071" max-vertical-offset="1998">
+              <caret line="32" column="18" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="18" />
+
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,8 +56,10 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="936">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+
+            <state vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="1026">
+              <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+
               <folding />
             </state>
           </provider>
@@ -181,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/java/JDBC/JDBC01DataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/JDBC/JDBC04CallProcedure.java" />
         <option value="$PROJECT_DIR$/src/main/java/JDBC/JDBC04CallFunction.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Hibernate/POJO/Course.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Course.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/Student.hbm.xml" />
@@ -197,6 +200,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Hibernate/POJO/anotation/Faculty.java" />
         <option value="$PROJECT_DIR$/src/main/java/Hibernate/Hibernate02Relational.java" />
         <option value="$PROJECT_DIR$/src/main/java/Hibernate/Hibernate03Projection.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Hibernate/Hibernate03Query.java" />
       </list>
     </option>
@@ -904,12 +908,18 @@
       <workItem from="1437361622783" duration="25000" />
       <workItem from="1437459054045" duration="996000" />
       <workItem from="1437463416636" duration="1666000" />
-      <workItem from="1437467672321" duration="7364000" />
+      <workItem from="1437467672321" duration="7560000" />
+      <workItem from="1437475783756" duration="3455000" />
+      <workItem from="1437495107896" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="49513000" />
+=======
+    <option name="totallyTimeSpent" value="53267000" />
+>>>>>>> dev
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1368,16 +1378,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="936">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="1026">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+>>>>>>> dev
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Hibernate/Hibernate03Query.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.31764707" vertical-offset="585" max-vertical-offset="1854">
           <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+=======
+        <state vertical-scroll-proportion="-1.130137" vertical-offset="1071" max-vertical-offset="1998">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="18" />
+>>>>>>> dev
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
