@@ -27,7 +27,8 @@ public class Hibernate03Query {
         //hibernate03Query.restriction(session);
         //hibernate03Query.restrictionOr(session);
         //hibernate03Query.projections(session);
-        hibernate03Query.projectionList(session);
+        //hibernate03Query.projectionList(session);
+        //hibernate03Query.customJoin(session);
         //criteria.setFirstResult(0);
         //criteria.setMaxResults(10);
         //criteria.addOrder(Order.desc("firstname"));
@@ -40,6 +41,23 @@ public class Hibernate03Query {
 
 
     }
+
+
+
+
+
+    private void customJoin(Session session){
+        Criteria criteria = session.createCriteria(Student.class,"student");
+        criteria.createAlias("student.faculty","faculty");
+        criteria.add(Restrictions.eq("faculty.name", "IT"));
+        List<Student> studentList = criteria.list();
+        for(Student student: studentList){
+            logger.info("Student : {} faculty : {}", student.getFirstName(), student.getFaculty().getName());
+        }
+       /* Criteria criteria1  = session.createCriteria(Student.class);
+        criteria1.add(Restrictions.eq("faculty.name","IT"));*/
+
+    }
     private void projectionList(Session session){
         ProjectionList projectionList = Projections.projectionList();
         projectionList.add(Projections.property("firstName").as("firstName"));
@@ -47,6 +65,7 @@ public class Hibernate03Query {
         Criteria criteria = session.createCriteria(Student.class);
         criteria.setProjection(projectionList);
         criteria.setResultTransformer(Transformers.aliasToBean(Student.class));
+
         List<Student> studentList = criteria.list();
         logger.info("{}",studentList);
         for(Student student:studentList){
