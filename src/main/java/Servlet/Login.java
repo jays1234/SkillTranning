@@ -22,6 +22,7 @@ public class Login extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        createCookie(req,resp);
     }
 
 
@@ -31,7 +32,15 @@ public class Login extends HttpServlet {
 
     }
     private void createCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        Cookie[] cookies = req.getCookies();
+        logger.info("cookie : {}",cookies.length);
+        if(cookies.length<1) {
+            Cookie cookie = new Cookie("status", "cookie");
+            cookie.setMaxAge(60 * 60);
+            resp.addCookie(cookie);
 
+        }
+        resp.sendRedirect("/Training/jsp/ResultLogin.jsp");
     }
     private void createSession(HttpServletRequest req,HttpServletResponse resp) throws IOException, ServletException {
         HttpSession httpSession = req.getSession();
