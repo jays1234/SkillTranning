@@ -30,6 +30,7 @@
         <mapping class="Hibernate.POJO.anotation.Student"/>
         <mapping class="Hibernate.POJO.anotation.Faculty"/>
         <mapping class="Hibernate.POJO.anotation.Course"/>
+        <mapping class="Hibernate.POJO.anotation.Account"/>
 
     </session-factory>
 </hibernate-configuration>
