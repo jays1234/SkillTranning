@@ -28,7 +28,7 @@ public class Hibernate04Insert {
     }
     private void insert(Session session){
         Student student = new Student();
-        student.setStudentId("aabbcc");
+        student.setStudentId("aaaaaaa");
         student.setFirstName("insertChild");
         student.setFaculty(getFaculty(session));
         session.beginTransaction();

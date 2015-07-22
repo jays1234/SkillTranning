@@ -20,7 +20,10 @@ public class Hibernate06HQL {
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         Hibernate06HQL hibernate06HQL = new Hibernate06HQL();
-        hibernate06HQL.queryHQL(session);
+        //hibernate06HQL.queryHQL(session);
+        //hibernate06HQL.updateHQL(session);
+        //hibernate06HQL.deleteHQL(session);
+        hibernate06HQL.insertHQL(session);
 
 
         session.close();
@@ -34,5 +37,37 @@ public class Hibernate06HQL {
         for(Student student:studentList){
             logger.info("Student Name : {} lastname : {}",student.getFirstName(),student.getLastName());
         }
+    }
+    private void updateHQL(Session session){
+        String hql = "update Student S set  S.firstName = :firstName where S.studentId = :studentId";
+        Query query = session.createQuery(hql);
+        query.setParameter("firstName","jays");
+        query.setParameter("studentId", "aaaa");
+        session.beginTransaction();
+        query.executeUpdate();
+        session.getTransaction().commit();
+
+    }
+    private void deleteHQL(Session session){
+        String hql = "delete Student where studentId = :studentId";
+        Query query = session.createQuery(hql);
+        query.setString("studentId","aaaaa");
+        session.beginTransaction();
+        query.executeUpdate();
+        session.getTransaction().commit();
+        logger.info("delete Success");
+
+    }
+    private void insertHQL(Session session){
+        String hql = "insert into Student(studentId,firstName)"+
+                "select facultyId,name from Faculty";
+
+        Query query = session.createQuery(hql);
+        session.beginTransaction();
+        query.executeUpdate();
+        session.getTransaction().commit();
+        logger.info("insert Success");
+
+
     }
 }
