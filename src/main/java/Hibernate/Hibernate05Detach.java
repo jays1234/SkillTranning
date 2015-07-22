@@ -1,8 +1,9 @@
 package Hibernate;
 
+
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.classic.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +17,12 @@ public class Hibernate05Detach {
         Session session = sessionFactory.openSession();
 
 
-        session.close();
+
+
+     session.close();
+    }
+    private void detachCriteria(Session session){
+
 
     }
 
