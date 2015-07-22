@@ -11,6 +11,9 @@
     <title></title>
 </head>
 <body>
-${status}
+${status}<br>
+${sessionScope.status}<br>
+
+<%= request.getSession().getAttribute("status") %>
 </body>
 </html>

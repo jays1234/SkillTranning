@@ -26,34 +26,43 @@ public class Login extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Session session = createSession();
-        Criteria criteria  = session.createCriteria(Account.class);
-        /*List<Account> accounts = criteria.list();
-        for(Account account:accounts){
-            logger.info(account.getUser()+" "+account.getPass());
-        }*/
-        Criterion user = Restrictions.eq("user", req.getParameter("user"));
-        Criterion pass = Restrictions.eq("pass",req.getParameter("pass"));
-        criteria.add(Restrictions.and(user,pass));
-        List<Account> accountList = criteria.list();
-        String status = null;
-        logger.info(accountList.toString()+req.getParameter("user")+" "+req.getParameter("pass"));
-        if(accountList.size()==1){
-            logger.info("Login Success");
-            status = "Success";
 
-        }else{
-            logger.info("Login Failed");
-            status = "failed";
-        }
-        HttpSession httpSession = req.getSession();
-        httpSession.setAttribute("status",status);
-        resp.sendRedirect("/Training/jsp/ResultLogin.jsp");
-
-
-
+       //createCookie(req,resp);
 
     }
+    private void createCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+
+    }
+    private void createSession(HttpServletRequest req,HttpServletResponse resp) throws IOException, ServletException {
+        HttpSession httpSession = req.getSession();
+        if(httpSession.getAttribute("status")==null || !httpSession.getAttribute("status").equals("Success")) {
+            Session session = createSession();
+            Criteria criteria  = session.createCriteria(Account.class);
+            Criterion user = Restrictions.eq("user", req.getParameter("user"));
+            Criterion pass = Restrictions.eq("pass",req.getParameter("pass"));
+            criteria.add(Restrictions.and(user,pass));
+            List<Account> accountList = criteria.list();
+            String status = null;
+            logger.info(accountList.toString()+req.getParameter("user")+" "+req.getParameter("pass"));
+            if(accountList.size()==1){
+                logger.info("Login Success");
+                status = "Success";
+
+            }else{
+                logger.info("Login Failed");
+                status = "failed";
+            }
+            httpSession.setAttribute("status", status);
+        }
+        if(httpSession.getAttribute("status").equals("Success")){
+            //req.getRequestDispatcher("/jsp/ResultLogin.jsp").forward(req,resp);
+            resp.sendRedirect("/Training/jsp/ResultLogin.jsp");
+        }else{
+            req.getRequestDispatcher("/html/Person.xhtml").forward(req,resp);
+        }
+    }
+
+
     private Session createSession(){
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         return sessionFactory.openSession();
