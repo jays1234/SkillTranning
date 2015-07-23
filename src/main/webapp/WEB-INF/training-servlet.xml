@@ -6,7 +6,23 @@
 
     <context:annotation-config />
     <context:component-scan base-package="Spring.Controller" />
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <!--tiles-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="prefix" value="/" />
+        <property name="suffix" value=".tiles" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+    </bean>
+
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tilesConfig/tileconfig.xml</value>
+            </list>
+        </property>
+    </bean>
+
+<!--
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/jsp/</value>
         </property>
@@ -15,7 +31,6 @@
         </property>
     </bean>
 
-<!--
     <bean id="urlMapping"
           class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
