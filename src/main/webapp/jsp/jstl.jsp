@@ -9,6 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="myPrefix" uri="/jsp/customtag.tld"%>
 <html>
 <head>
     <title></title>
@@ -62,5 +63,15 @@ ${salary}
     <c:when test="${salary >4000}">aaa</c:when>
     <c:when test="${salary eq 4000}">bbb</c:when>
 </c:choose>
+<h2>FMT</h2>
+<c:set var="BD" value="11/01/1994"></c:set>
+<fmt:parseDate value="${BD}" var="BDdate"
+               pattern="dd/MM/yyyy" ></fmt:parseDate>
+${BD} to ${BDdate}
+<h2>Date Format</h2>
+<fmt:formatDate value="${BDdate}" var="BDFormat" pattern="yyyy/MM/dd"></fmt:formatDate>
+${BDFormat}
+<h2>MyTag</h2>
+<myPrefix:MyTag></myPrefix:MyTag>
 </body>
 </html>
