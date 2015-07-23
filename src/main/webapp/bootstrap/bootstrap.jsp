@@ -66,7 +66,7 @@
         <h2>Date Picker</h2>
         <div class="input-group">
           <span class="input-group-addon"><span class="glyphicon glyphicon-heart"></span></span>
-          <input  class="form-control" type="text" placeholder="click to show datepicker"  id="example1"></input>
+          <input  class="form-control" type="text" placeholder="click to show datepicker"  id="example1">
           <span class="input-group-addon">j</span>
         </div>
       </div>
@@ -191,7 +191,7 @@
       </div>
     </div>
 </div>
-
+</div>
 
 
 

@@ -2,13 +2,18 @@ package Spring.Controller;
 
 import Hibernate.POJO.anotation.Student;
 import Spring.Service.StudentService;
+import org.json.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,4 +44,26 @@ public class StudentController {
 
         return new ModelAndView("student",model);
     }
+    @RequestMapping(value = "/ajaxTrain.html", method = RequestMethod.GET)
+    private @ResponseBody ResponseEntity<String>  getStudentAll(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception{
+        logger.info("in Student.html");
+        List<Student> studentList = studentService.findStudent();
+        Map model = new HashMap();
+        model.put("studentList",studentList);
+        JSONArray jsonArray = new JSONArray(studentList);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(jsonArray.toString(), headers, HttpStatus.OK);
+
+    }
+    @RequestMapping(value = "/test.html", method = RequestMethod.GET)
+    private ModelAndView getStudentTest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception{
+        logger.info("in Student.html");
+        List<Student> studentList = studentService.findStudent();
+        Map model = new HashMap();
+        model.put("studentList",studentList);
+
+        return new ModelAndView("student",model);
+    }
+
 }
