@@ -7,17 +7,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html>
 <head>
     <title></title>
 </head>
 <body>
+<c:set var="MS001"><spring:message code = "MS001"></spring:message></c:set>
+<c:set var="MS002"><spring:message code = "MS002"></spring:message></c:set>
+<c:set var="MS003"><spring:message code = "MS003"></spring:message></c:set>
 <table border="1">
   <thead>
     <tr>
-      <td>ID</td>
-      <td>firstName</td>
-      <td>lastName</td>
+      <td>${MS001}</td>
+      <td>${MS002}</td>
+      <td>${MS003}</td>
     </tr>
   </thead>
   <tbody>
