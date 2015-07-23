@@ -12,7 +12,6 @@
     <!--anotation Config-->
     <context:annotation-config />
     <context:property-placeholder location="classpath*:META-INF/*.properties"/>
-    <context:component-scan base-package="Spring.Service" />
     <context:component-scan base-package="Spring.dao,Spring.Service" />
 
     <bean id="beanXml" class="Spring.Spring01BeanXML" init-method="init" destroy-method="destory">
