@@ -32,7 +32,7 @@ public class Spring01BeanXML {
     }
 
     public static void main(String[] args){
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("BeansConfig.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("META-INF/applicationContext.xml");
         Spring01BeanXML spring01BeanXML = (Spring01BeanXML)context.getBean("beanXml");
         spring01BeanXML.run();
         context.destroy();
