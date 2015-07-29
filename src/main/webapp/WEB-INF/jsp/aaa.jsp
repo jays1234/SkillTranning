@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: phirayu
-  Date: 23/7/2558
-  Time: 16:09 น.
+  Date: 24/7/2558
+  Time: 19:09 น.
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,12 +11,6 @@
     <title></title>
 </head>
 <body>
-<p>aaa</p>
-<p>2222</p>
-<button id="changeText">changeText</button><br>
-<button id="click">click Me</button><br>
-
-<img src="http://www.w3schools.com/js/pic_htmltree.gif">
-<script src="test.js"></script>
+<h1>aasaaa</h1>
 </body>
 </html>

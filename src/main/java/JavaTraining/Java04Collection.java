@@ -37,14 +37,15 @@ public class Java04Collection {
         for(int i=0;i<list.size();i++){
             logger.info("list index : {} , value :{}",i,list.get(i));
         }
-        /*Set<String> set = java04Collection.createSet();
+
+        Set<String> set = java04Collection.createSet();
         for(String string:set){
             logger.info("Set Value : {}",string);
-        }*/
-       /* Map<String,String> map = java04Collection.createMap();
+        }
+        Map<String,String> map = java04Collection.createMap();
         logger.info("Map key :it , value : {}",map.get("it"));
         for(String key : map.keySet()){
             logger.info("Map key :{} , value : {}",key,map.get(key));
-        }*/
+        }
     }
 }

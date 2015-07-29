@@ -29,6 +29,7 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
        //createCookie(req,resp);
+        createSession(req, resp);
 
     }
     private void createCookie(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -64,8 +65,9 @@ public class Login extends HttpServlet {
             httpSession.setAttribute("status", status);
         }
         if(httpSession.getAttribute("status").equals("Success")){
-            //req.getRequestDispatcher("/jsp/ResultLogin.jsp").forward(req,resp);
-            resp.sendRedirect("/Training/jsp/ResultLogin.jsp");
+            req.getRequestDispatcher("/jsp/ResultLogin.jsp").forward(req,resp);
+
+
         }else{
             req.getRequestDispatcher("/html/Person.xhtml").forward(req,resp);
         }

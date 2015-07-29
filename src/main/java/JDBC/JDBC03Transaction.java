@@ -10,9 +10,10 @@ import java.sql.SQLException;
  */
 public class JDBC03Transaction {
     public static void main(String[] args){
+        Connection connection = null ;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "phirayu", "123456");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "phirayu", "123456");
             connection.setAutoCommit(false);
             String sql = "insert into SET_PERSON values (?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -28,6 +29,12 @@ public class JDBC03Transaction {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
+            try {
+                connection.rollback();
+            }
+            catch (SQLException e1) {
+                e.printStackTrace();
+            }
         }
 
     }

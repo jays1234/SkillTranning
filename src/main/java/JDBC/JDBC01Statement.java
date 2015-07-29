@@ -22,7 +22,7 @@ public class JDBC01Statement {
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","phirayu","123456");
-            //jdbc01Statement.selectData(connection);
+            jdbc01Statement.selectData(connection);
             //jdbc01Statement.insertUpdateDelete(connection,delete);
             connection.close();
         } catch (ClassNotFoundException e) {
@@ -35,7 +35,7 @@ public class JDBC01Statement {
         Statement statement = null;
         try {
             statement = connection.createStatement();
-            String sql = "select * from SET_PERSON";
+            String sql = "select * from SET_PERSON ";
             ResultSet resultSet = statement.executeQuery(sql);
             while(resultSet.next()){
                 logger.info(resultSet.getString("PERSON_ID"));

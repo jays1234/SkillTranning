@@ -6,7 +6,6 @@
 <hibernate-mapping>
     <class name="Hibernate.POJO.xml.CourseXml" table="SET_COURSE">
         <meta attribute="class-description">
-            This class contains the employee detail.
         </meta>
         <id name="courseId" type="string" column="course_id">
 

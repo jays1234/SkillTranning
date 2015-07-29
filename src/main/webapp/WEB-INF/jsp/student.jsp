@@ -17,6 +17,7 @@
 <c:set var="MS001"><spring:message code = "MS001"></spring:message></c:set>
 <c:set var="MS002"><spring:message code = "MS002"></spring:message></c:set>
 <c:set var="MS003"><spring:message code = "MS003"></spring:message></c:set>
+<c:set var="MS004"><spring:message code = "MS004"></spring:message></c:set>
 <table border="1">
   <thead>
     <tr>

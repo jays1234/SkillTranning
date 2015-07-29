@@ -10,7 +10,6 @@ public class Java03Loop {
     public static void main(String arg[]){
         Logger logger = LoggerFactory.getLogger(Java03Loop.class);
 
-
        int i=0;
         while(i<10){
             logger.info("while loop : {}",i);
@@ -21,13 +20,13 @@ public class Java03Loop {
         do{
             logger.info("do while loop :{}",i);
             i--;
-        }while(i>=1);*/
+        }while(i>=1);
 
-       /* for(int i=0;i<10;i++){
+       for(int i=0;i<10;i++){
             logger.info("for loop {}",i);
-        }*/
+        }
 
-        /*for(char a:"String".toCharArray()){
+        for(char a:"String".toCharArray()){
             logger.info("for each {}",a);
         }*/
     }

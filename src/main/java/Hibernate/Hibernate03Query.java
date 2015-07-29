@@ -25,7 +25,7 @@ public class Hibernate03Query {
 
         Hibernate03Query hibernate03Query = new Hibernate03Query();
         //hibernate03Query.restriction(session);
-        //hibernate03Query.restrictionOr(session);
+        hibernate03Query.restrictionOr(session);
         //hibernate03Query.projections(session);
         //hibernate03Query.projectionList(session);
         //hibernate03Query.customJoin(session);
@@ -79,6 +79,7 @@ public class Hibernate03Query {
     }
     private void projections(Session session){
         Criteria criteria = session.createCriteria(Student.class);
+
         criteria.setProjection(Projections.property("firstName"));
 
 

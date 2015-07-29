@@ -50,7 +50,7 @@ public class Hibernate02Relational {
 
 
         //delete
-        /*Faculty faculty = facultyList.get(0);
+        Faculty faculty = facultyList.get(0);
         session.beginTransaction();
         for(Student student:faculty.getStudentSet()){
             student.setFaculty(facultyList.get(1));
@@ -59,7 +59,7 @@ public class Hibernate02Relational {
         session.flush();
         logger.info("delete {}",faculty.getName());
         session.delete(faculty);
-        session.getTransaction().commit();*/
+        session.getTransaction().commit();
 
 
 

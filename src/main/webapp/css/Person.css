@@ -11,7 +11,7 @@ h2{
     /*static = default*/
     /*relative = เหมือนกับstatic แต่ใช้ top left กำหนดตวามห่างได้*/
     /*absolute = ไม่สน element ก่อนหน้า จะตามตำแหน่งที่ fix*/
-    /*fix = ไม่scroll ตามscroll bar*/
+    /*fixed = ไม่scroll ตามscroll bar*/
 }
 a:link    {color:green; background-color:transparent; text-decoration:none}
 a:visited {color:pink; background-color:transparent; text-decoration:none}
