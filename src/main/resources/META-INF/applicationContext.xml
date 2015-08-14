@@ -12,9 +12,9 @@
     <!--anotation Config-->
     <context:annotation-config />
     <context:property-placeholder location="classpath*:META-INF/*.properties"/>
-    <context:component-scan base-package="Spring.dao,Spring.Service" />
+    <context:component-scan base-package="Trainee.Spring.dao,Trainee.Spring.Service" />
 
-    <bean id="beanXml" class="Spring.Spring01BeanXML" init-method="init" destroy-method="destory">
+    <bean id="beanXml" class="Trainee.Spring.Spring01BeanXML" init-method="init" destroy-method="destory">
         <property name="message" value="This is Bean"></property>
         <property name="stringList">
             <list>
@@ -23,7 +23,7 @@
             </list>
         </property>
     </bean>
-    <bean class="Spring.BeanProcess.InitHelloworld"></bean>
+    <bean class="Trainee.Spring.BeanProcess.InitHelloworld"></bean>
 
  <!--   <bean id="propertyPlaceholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -44,7 +44,7 @@
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="Hibernate.POJO.anotation" />
+        <property name="packagesToScan" value="Trainee.Hibernate.POJO.anotation" />
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>

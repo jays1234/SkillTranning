@@ -4,7 +4,7 @@
     <short-name>My Custom Tag</short-name>
     <tag>
         <name>MyTag</name>
-        <tag-class>Customtag.MyTag</tag-class>
+        <tag-class>Trainee.Customtag.MyTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

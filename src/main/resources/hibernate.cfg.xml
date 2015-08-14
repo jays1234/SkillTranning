@@ -26,11 +26,11 @@
         <!-- List of XML mapping files -->
         <mapping resource="Course.hbm.xml"/>
 
-        <mapping class="Hibernate.POJO.anotation.Role"/>
-        <mapping class="Hibernate.POJO.anotation.Student"/>
-        <mapping class="Hibernate.POJO.anotation.Faculty"/>
-        <mapping class="Hibernate.POJO.anotation.Course"/>
-        <mapping class="Hibernate.POJO.anotation.Account"/>
+        <mapping class="Trainee.Hibernate.POJO.anotation.Role"/>
+        <mapping class="Trainee.Hibernate.POJO.anotation.Student"/>
+        <mapping class="Trainee.Hibernate.POJO.anotation.Faculty"/>
+        <mapping class="Trainee.Hibernate.POJO.anotation.Course"/>
+        <mapping class="Trainee.Hibernate.POJO.anotation.Account"/>
 
     </session-factory>
 </hibernate-configuration>
